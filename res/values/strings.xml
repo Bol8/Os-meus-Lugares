@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Os Meus Lugares</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_list_lugares">ListLugares</string>
+    <string name="title_activity_acerca_de">AcercaDeActivity</string>
+    <string name="acerca_de">Acerca De</string>
+    <string name="salir">Salir</string>
+    <string name="title_activity_edit_lugar">EditLugarActivity</string>
+    <string name="listado_lugares">Listado Lugares</string>
+    <string name="title_preferencias">Preferencias</string>
+    <string name="title_activity_preferencias">PreferenciasActivity</string>
+    <string name="Add">Añadir</string>
+    <string name="nombre">Óscar Bolón</string>
+    <string name="dispositivosMoviles">Dispositivos Móviles DAM 2</string>
+    <string name="editNombre">Nombre:</string>
+    <string name="tipo">Tipo lugar:</string>
+    <string name="direccion">Dirección:</string>
+    <string name="telefono">Telefono:</string>
+    <string name="URL">URL:</string>
+    <string name="comentario">Comentario:</string>
+    <string name="ciudad">Ciudad:</string>
+
+</resources>
