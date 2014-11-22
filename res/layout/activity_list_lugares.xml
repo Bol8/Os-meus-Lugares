@@ -10,7 +10,7 @@
     tools:context="com.example.osmeuslugares.ListLugares" >
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/buttonGuardar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="añadir"

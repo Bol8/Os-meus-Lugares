@@ -20,12 +20,14 @@ public class MainActivity extends Activity {
 		try {
 			LugaresDb lugaresDb = new LugaresDb(getBaseContext());
 			
+			Toast.makeText(getBaseContext(), "Base de datos preparada",
+					Toast.LENGTH_LONG).show();
+			
 		} catch (Exception e) {
 			Log.e(getClass().toString(), e.getMessage());
 		}
 
-		Toast.makeText(getBaseContext(), "Base de datos preparada",
-				Toast.LENGTH_LONG).show();
+		
 
 
 	}

@@ -22,5 +22,8 @@
     <string name="URL">URL:</string>
     <string name="comentario">Comentario:</string>
     <string name="ciudad">Ciudad:</string>
+    <string name="botonGuardar">Guardar</string>
+    <string name="botonEliminar">Eliminar</string>
+    <string name="botonEditar">Editar</string>
 
 </resources>

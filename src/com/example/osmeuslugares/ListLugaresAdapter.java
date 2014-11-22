@@ -24,9 +24,10 @@ public class ListLugaresAdapter extends BaseAdapter {
 		super();
 		this.activity = activity;
 		this.lista = new Vector<Lugar>();
+		actualizarDesdeDB();
 	}
 
-	public void abrir() throws SQLException{
+	public void actualizarDesdeDB() throws SQLException{
 		lugaresDb = new LugaresDb(activity);
 		this.lista = lugaresDb.cargarLugaresDesdeBD();
 	}
@@ -47,6 +48,8 @@ public class ListLugaresAdapter extends BaseAdapter {
 		// TODO Auto-generated method stub
 		return position;
 	}
+	
+	
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
@@ -54,14 +57,13 @@ public class ListLugaresAdapter extends BaseAdapter {
 		LayoutInflater inflater = activity.getLayoutInflater();
 		View view = inflater.inflate(R.layout.elemento_lista, null, true);
 		
-		cargaDatos(position, view);
+		cargaDatosEnCampos(position, view);
 
 		return view;
 	}
 
-	private void cargaDatos(int position, View view) {
+	private void cargaDatosEnCampos(int position, View view) {
 		TextView textViewTitulo = (TextView) view.findViewById(R.id.textViewTitulo);
-		//TextView textViewInfo = (TextView) view.findViewById(R.id.textViewInfo);
 		TextView txtNombre = (TextView) view.findViewById(R.id.textView2);
 		TextView txtLugar = (TextView) view.findViewById(R.id.textView1);
 		TextView txtDireccion = (TextView) view.findViewById(R.id.textView3);
@@ -81,6 +83,5 @@ public class ListLugaresAdapter extends BaseAdapter {
 		txtTelf.setText(lugar.getTelefono());
 		txtComent.setText(lugar.getComentario());
 		
-		//textViewInfo.setText(lugar.toString());
 	}
 }

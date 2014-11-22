@@ -1,9 +1,12 @@
 package com.example.osmeuslugares;
 
+import android.content.ContentValues;
+import android.os.Bundle;
+
 
 public class Lugar {
 	
-	private Long id;
+	private int id;
 	private String nombre;
 	private Categoria categoria;
 	private String direccion;
@@ -11,148 +14,87 @@ public class Lugar {
 	private String url;
 	private String telefono;
 	private String comentario;
-	/**
-	 * @param nombre
-	 * @param tipoLugar
-	 */
+	
+	//Mapeo para recuperar los datos de la BD
+	public static final String C_ID ="lug_id";
+	public static final String C_NOMBRE ="lug_nombre";
+	public static final String C_CATEGORIA_ID ="lug_categoria_id";
+	public static final String C_DIRECCION ="lug_direccion";
+	public static final String C_CIUDAD ="lug_ciudad";
+	public static final String C_TELEFONO ="lug_telefono";
+	public static final String C_URL ="lug_url";
+	public static final String C_COMENTARIO ="lug_comentario";
+	
+	
+	
 	public Lugar() {
 		super();
 	}
 	
-	
-	/**
-	 * @return the id
-	 */
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
-
-	/**
-	 * @return the nombre
-	 */
 	public String getNombre() {
 		return nombre;
 	}
 
-
-	/**
-	 * @param nombre the nombre to set
-	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-
-	/**
-	 * @return the categoria
-	 */
 	public Categoria getCategoria() {
 		return categoria;
 	}
 
-
-	/**
-	 * @param categoria the categoria to set
-	 */
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
 
-
-
-
-	/**
-	 * @return the direccion
-	 */
 	public String getDireccion() {
 		return direccion;
 	}
 
-
-	/**
-	 * @param direccion the direccion to set
-	 */
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
 
-
-	/**
-	 * @return the ciudad
-	 */
 	public String getCiudad() {
 		return ciudad;
 	}
 
-
-	/**
-	 * @param ciudad the ciudad to set
-	 */
 	public void setCiudad(String ciudad) {
 		this.ciudad = ciudad;
 	}
 
-
-	/**
-	 * @return the url
-	 */
 	public String getUrl() {
 		return url;
 	}
 
-
-	/**
-	 * @param url the url to set
-	 */
 	public void setUrl(String url) {
 		this.url = url;
 	}
 
-
-	/**
-	 * @return the telefono
-	 */
 	public String getTelefono() {
 		return telefono;
 	}
 
-
-	/**
-	 * @param telefono the telefono to set
-	 */
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 
-
-	/**
-	 * @return the comentario
-	 */
 	public String getComentario() {
 		return comentario;
 	}
 
-
-	/**
-	 * @param comentario the comentario to set
-	 */
 	public void setComentario(String comentario) {
 		this.comentario = comentario;
 	}
 
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
 		return "Nombre: " + nombre + "\nCategoria: "
@@ -160,6 +102,53 @@ public class Lugar {
 				+ "\nURL: " + url + "\nTelefono: " + telefono + "\nComentario: "
 				+ comentario;
 	}
+	
+	public Bundle getBundle() {
+		Bundle bundle = new Bundle();
+		
+		
+		bundle.putString(C_NOMBRE, nombre);
+		bundle.putLong(C_CATEGORIA_ID, categoria.getId());
+		bundle.putString(Categoria.C_NOMBRE, categoria.getNombre());
+		bundle.putString(C_DIRECCION, direccion);
+		bundle.putString(C_CIUDAD,ciudad);
+		bundle.putString(C_TELEFONO,telefono);
+		bundle.putString(C_URL,url);
+		bundle.putString(C_COMENTARIO,comentario);
+		bundle.putInt(C_ID, id);
+				
+		return bundle;
+		
+	}
+	
+	public void setBundle(Bundle bundle) {
+
+		
+		nombre=bundle.getString(C_NOMBRE);		
+		categoria=new Categoria(bundle.getLong(C_CATEGORIA_ID), bundle.getString(Categoria.C_NOMBRE));
+		direccion=bundle.getString(C_DIRECCION);
+		ciudad=bundle.getString(C_CIUDAD);
+		telefono=bundle.getString(C_TELEFONO);
+		url = bundle.getString(C_URL);
+		comentario=bundle.getString(C_COMENTARIO);
+		id = bundle.getInt(C_ID);
+	}
+	
+	public ContentValues getContentValues() {
+		ContentValues registro = new ContentValues();
+		
+		registro.put(C_NOMBRE, nombre);
+		registro.put(C_CATEGORIA_ID, categoria.getId());
+		registro.put(C_DIRECCION, direccion);
+		registro.put(C_CIUDAD, ciudad);
+		registro.put(C_TELEFONO, telefono);
+		registro.put(C_URL, url);
+		registro.put(C_COMENTARIO, comentario);
+		
+		return registro;
+	}
+	
+	
 
 
 

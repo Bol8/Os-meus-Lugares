@@ -23,7 +23,7 @@
             android:text="@string/editNombre" />
 
         <EditText
-            android:id="@+id/editText1"
+            android:id="@+id/editNombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/textViewLugar"
@@ -40,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_below="@+id/editText1"
+            android:layout_below="@+id/editNombre"
             android:layout_marginTop="30dp"
             android:text="@string/tipo" />
 
@@ -48,7 +48,7 @@
             android:id="@+id/spinnerTipo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/editText1"
+            android:layout_alignLeft="@+id/editNombre"
             android:layout_alignTop="@+id/textView2"
             android:entries="@array/tipos_lugares" />
 
@@ -62,7 +62,7 @@
             android:text="@string/direccion" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/editDireccion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/textViewDirecc"
@@ -75,17 +75,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_below="@+id/editText2"
+            android:layout_below="@+id/editDireccion"
             android:layout_marginTop="42dp"
             android:text="@string/telefono" />
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/editTelefono"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/textViewCiudad"
             android:layout_alignBottom="@+id/textViewCiudad"
-            android:layout_alignLeft="@+id/editText2"
+            android:layout_alignLeft="@+id/editDireccion"
             android:ems="10" />
 
         <TextView
@@ -93,17 +93,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_below="@+id/editText3"
+            android:layout_below="@+id/editTelefono"
             android:layout_marginTop="46dp"
             android:text="@string/URL" />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/editURL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/textViewUrl"
             android:layout_alignBottom="@+id/textViewUrl"
-            android:layout_alignLeft="@+id/editText3"
+            android:layout_alignLeft="@+id/editTelefono"
             android:ems="10" />
 
         <TextView
@@ -111,18 +111,36 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_below="@+id/editText4"
+            android:layout_below="@+id/editURL"
             android:layout_marginTop="42dp"
             android:text="@string/comentario" />
 
         <EditText
-            android:id="@+id/editText5"
+            android:id="@+id/editComentario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/textViewTel"
             android:layout_alignBottom="@+id/textViewTel"
             android:layout_toRightOf="@+id/textViewTel"
             android:ems="10" />
+
+        <Button
+            android:id="@+id/buttonGuardar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:onClick="botonGuardar"
+            android:text="@string/botonGuardar" />
+
+        <Button
+            android:id="@+id/buttonEliminar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/editURL"
+            android:onClick="botonEliminar"
+            android:text="@string/botonEliminar" />
 
     </RelativeLayout>
 

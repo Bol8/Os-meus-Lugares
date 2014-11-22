@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 
 public class ListLugares extends ListActivity {
 	private ListLugaresAdapter listLugaresAdapter;
@@ -20,24 +21,24 @@ public class ListLugares extends ListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_list_lugares);
-		btnAñadir = (Button) findViewById(R.id.button1);
-		/*
-		 * String []lista = {"Sitio1", "Sitio2", "Sitio3"}; Vector<String>
-		 * vector = new Vector<String>(3); vector.add(lista[0]);
-		 * vector.add(lista[1]); vector.add(lista[2]); setListAdapter(new
-		 * ListLugaresAdapter(this,vector));
-		 */
-		// Crear el objeto adaptador
-		//
+		btnAñadir = (Button) findViewById(R.id.buttonGuardar);
+		
 		listLugaresAdapter = new ListLugaresAdapter(this);
-		listLugaresAdapter.abrir();
 		setListAdapter(listLugaresAdapter);
 	}
 
-	public void añadir(View v) {
-		iniciarEditLugarAdd();
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {	
+		super.onListItemClick(l, v, position, id);
+		
+		Lugar lugar = (Lugar) getListAdapter().getItem(position);
+		int lug_id = lugar.getId();
+		System.out.println("Desde list Lugares " + lugar.getId());
+		Bundle datosLugar = lugar.getBundle();
+		datosLugar.putBoolean("Add", false);
+		iniciarEditLugarAdd(datosLugar);
+		
 	}
-
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -48,9 +49,7 @@ public class ListLugares extends ListActivity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
+		
 		switch (item.getItemId()) {
 		case R.id.edit_lugares:
 			iniciarEditLugarAdd();
@@ -69,7 +68,13 @@ public class ListLugares extends ListActivity {
 	
 	private void iniciarEditLugarAdd() {
 		Intent i = new Intent(this, EditLugarActivity.class);
-		i.putExtra("Añadir", true);
+		i.putExtra("Add", true);
+		startActivity(i);
+	}
+	
+	private void iniciarEditLugarAdd(Bundle extras) {
+		Intent i = new Intent(this, EditLugarActivity.class);
+		i.putExtras(extras);
 		startActivity(i);
 	}
 	
@@ -77,5 +82,20 @@ public class ListLugares extends ListActivity {
 		Intent i = new Intent(this, PreferenciasActivity.class);
 		startActivity(i);
 	}
+	
+	public void añadir(View v) {
+		iniciarEditLugarAdd();
+	}
+
+	@Override
+	protected void onRestart() {
+		super.onRestart();
+		listLugaresAdapter.actualizarDesdeDB();
+		listLugaresAdapter.notifyDataSetChanged();
+		
+	}
+	
+
+	
 	
 }
