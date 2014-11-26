@@ -33,7 +33,6 @@ public class ListLugares extends ListActivity {
 		
 		Lugar lugar = (Lugar) getListAdapter().getItem(position);
 		int lug_id = lugar.getId();
-		System.out.println("Desde list Lugares " + lugar.getId());
 		Bundle datosLugar = lugar.getBundle();
 		datosLugar.putBoolean("Add", false);
 		iniciarEditLugarAdd(datosLugar);

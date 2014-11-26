@@ -10,7 +10,7 @@
     tools:context="com.example.osmeuslugares.AcercaDeActivity" >
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewListItem2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -24,7 +24,7 @@
         android:id="@+id/textViewLugar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/textViewListItem2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="37dp"
         android:text="@string/dispositivosMoviles"

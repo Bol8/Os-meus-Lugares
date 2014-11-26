@@ -53,7 +53,7 @@ public class ListLugaresAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		// TODO Auto-generated method stub
+	
 		LayoutInflater inflater = activity.getLayoutInflater();
 		View view = inflater.inflate(R.layout.elemento_lista, null, true);
 		
@@ -64,12 +64,12 @@ public class ListLugaresAdapter extends BaseAdapter {
 
 	private void cargaDatosEnCampos(int position, View view) {
 		TextView textViewTitulo = (TextView) view.findViewById(R.id.textViewTitulo);
-		TextView txtNombre = (TextView) view.findViewById(R.id.textView2);
-		TextView txtLugar = (TextView) view.findViewById(R.id.textView1);
-		TextView txtDireccion = (TextView) view.findViewById(R.id.textView3);
+		TextView txtNombre = (TextView) view.findViewById(R.id.textViewListItem2);
+		TextView txtLugar = (TextView) view.findViewById(R.id.textTitulo);
+		TextView txtDireccion = (TextView) view.findViewById(R.id.textViewListItem3);
 		TextView txtCiudad = (TextView) view.findViewById(R.id.textView4);
-		TextView txtUrl = (TextView) view.findViewById(R.id.textView5);
-		TextView txtTelf = (TextView) view.findViewById(R.id.textView7);
+		TextView txtUrl = (TextView) view.findViewById(R.id.textViewListItem4);
+		TextView txtTelf = (TextView) view.findViewById(R.id.textViewListItem6);
 		TextView txtComent = (TextView) view.findViewById(R.id.textView9);
 		
 		Lugar lugar = (Lugar)lista.elementAt(position);

@@ -25,5 +25,10 @@
     <string name="botonGuardar">Guardar</string>
     <string name="botonEliminar">Eliminar</string>
     <string name="botonEditar">Editar</string>
+    <string name="osMeus">OS MEUS</string>
+    <string name="lugares">LUGARES...</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="title_activity_tab_">Tab_Activity</string>
+    <string name="title_activity_tab">TabActivity</string>
 
 </resources>

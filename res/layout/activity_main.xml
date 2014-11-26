@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/images2"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -9,18 +10,41 @@
     tools:context="com.example.osmeuslugares.MainActivity" >
 
     <TextView
-        android:id="@+id/textViewLugar"
+        android:id="@+id/textTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="54dp"
+        android:text="@string/osMeus"
+        android:padding="2dp"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        android:textStyle="italic|bold" />
 
-    <ImageView
-        android:id="@+id/imageView1"
+    <TextView
+        android:id="@+id/textLugares"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/textViewLugar"
-        android:layout_marginRight="37dp"
-        android:layout_marginTop="25dp" />
+        android:layout_below="@+id/textTitulo"
+        android:layout_marginRight="44dp"
+        android:text="@string/lugares"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        android:textStyle="bold|italic" />
+
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="22dp"
+        android:layout_marginRight="20dp"
+        android:background="#DCDCDC"
+        android:contentDescription="@string/siguiente"
+        android:onClick="pulsaBoton"
+        android:src="@drawable/play" />
 
 </RelativeLayout>
