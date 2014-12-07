@@ -3,144 +3,127 @@
     android:id="@+id/ScrollView1"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
+    android:background="@drawable/images2"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.osmeuslugares.EditLugarActivity" >
+    tools:context="lugar.EditLugarActivity" >
 
     <RelativeLayout
         android:layout_width="294dp"
-        android:layout_height="416dp" >
-
-        <TextView
-            android:id="@+id/textViewLugar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="20dp"
-            android:text="@string/editNombre" />
+        android:layout_height="482dp" >
 
         <EditText
             android:id="@+id/editNombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/textViewLugar"
-            android:layout_alignBottom="@+id/textViewLugar"
-            android:layout_marginLeft="16dp"
-            android:layout_toRightOf="@+id/textViewLugar"
-            android:ems="10" >
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="NOMBRE LUGAR"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff"
+            android:textSize="20dp"
+            android:textStyle="bold|italic" >
 
             <requestFocus />
         </EditText>
 
-        <TextView
-            android:id="@+id/textViewListItem2"
+        <EditText
+            android:id="@+id/editTextTel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_below="@+id/editNombre"
-            android:layout_marginTop="30dp"
-            android:text="@string/tipo" />
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/editTexNombreCategoria"
+            android:layout_marginTop="40dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="TELÉFONO"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff"
+            android:textSize="20dp"
+            android:textStyle="bold|italic" />
+
+        <EditText
+            android:id="@+id/editTextURL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/editTextTel"
+            android:layout_marginTop="44dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="URL"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff"
+            android:textSize="20dp"
+            android:textStyle="bold|italic" />
+
+        <EditText
+            android:id="@+id/editTexTComentario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/editTextURL"
+            android:layout_marginTop="19dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="COMENTARIO"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff"
+            android:textSize="20dp"
+            android:textStyle="bold|italic" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:onClick="pulsaImageView"
+            android:src="@drawable/iconnuevo" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignTop="@+id/spinTipo"
+            android:layout_marginLeft="80dp"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:textStyle="bold|italic" />
+
+        <EditText
+            android:id="@+id/editTexNombreCategoria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/textView1"
+            android:layout_marginTop="51dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="DIRECCIÓN"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff"
+            android:textSize="20dp"
+            android:textStyle="bold|italic" />
 
         <Spinner
-            android:id="@+id/spinnerTipo"
+            android:id="@+id/spinnerCategoria"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/editNombre"
-            android:layout_alignTop="@+id/textViewListItem2"
-            android:entries="@array/tipos_lugares" />
-
-        <TextView
-            android:id="@+id/textViewDirecc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/spinnerTipo"
-            android:layout_marginTop="27dp"
-            android:text="@string/direccion" />
-
-        <EditText
-            android:id="@+id/editDireccion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/textViewDirecc"
-            android:layout_alignBottom="@+id/textViewDirecc"
-            android:layout_alignLeft="@+id/spinnerTipo"
-            android:ems="10" />
-
-        <TextView
-            android:id="@+id/textViewCiudad"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/editDireccion"
-            android:layout_marginTop="42dp"
-            android:text="@string/telefono" />
-
-        <EditText
-            android:id="@+id/editTelefono"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/textViewCiudad"
-            android:layout_alignBottom="@+id/textViewCiudad"
-            android:layout_alignLeft="@+id/editDireccion"
-            android:ems="10" />
-
-        <TextView
-            android:id="@+id/textViewUrl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/editTelefono"
-            android:layout_marginTop="46dp"
-            android:text="@string/URL" />
-
-        <EditText
-            android:id="@+id/editURL"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/textViewUrl"
-            android:layout_alignBottom="@+id/textViewUrl"
-            android:layout_alignLeft="@+id/editTelefono"
-            android:ems="10" />
-
-        <TextView
-            android:id="@+id/textViewTel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/editURL"
-            android:layout_marginTop="42dp"
-            android:text="@string/comentario" />
-
-        <EditText
-            android:id="@+id/editComentario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/textViewTel"
-            android:layout_alignBottom="@+id/textViewTel"
-            android:layout_toRightOf="@+id/textViewTel"
-            android:ems="10" />
-
-        <Button
-            android:id="@+id/buttonGuardar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:onClick="botonGuardar"
-            android:text="@string/botonGuardar" />
-
-        <Button
-            android:id="@+id/buttonEliminar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignRight="@+id/editURL"
-            android:onClick="botonEliminar"
-            android:text="@string/botonEliminar" />
+            android:layout_below="@+id/editTexTComentario"
+            android:layout_marginTop="14dp"
+            android:layout_toRightOf="@+id/textView1"
+            android:gravity="center"
+            android:popupBackground="#50676767" />
 
     </RelativeLayout>
 

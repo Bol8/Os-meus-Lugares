@@ -30,5 +30,10 @@
     <string name="siguiente">Siguiente</string>
     <string name="title_activity_tab_">Tab_Activity</string>
     <string name="title_activity_tab">TabActivity</string>
+    <string name="edit_lugar">Nuevo lugar</string>
+    <string name="sub_edit">Sub Menu</string>
+    <string name="title_activity_edit_categoria">EditCategoriaActivity</string>
+    <string name="NombreCategoria">Nombre:</string>
+    <string name="hintNombre">NOMBRE CATEGORÍA</string>
 
 </resources>

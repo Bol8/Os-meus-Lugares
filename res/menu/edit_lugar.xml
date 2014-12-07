@@ -7,5 +7,10 @@
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="@string/action_settings"/>
+    <item
+        android:id="@+id/guardarLugar"
+        android:icon="@android:drawable/ic_menu_save"
+        android:showAsAction="always"
+        android:title="Guardar lugar/Editar lugar"/>
 
 </menu>

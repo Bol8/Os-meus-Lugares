@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.osmeuslugares.MainActivity" >
+    tools:context="vistas.MainActivity" >
 
     <TextView
         android:id="@+id/textTitulo"
@@ -16,8 +16,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="54dp"
-        android:text="@string/osMeus"
         android:padding="2dp"
+        android:text="@string/osMeus"
         android:textColor="#ffffff"
         android:textSize="30sp"
         android:textStyle="italic|bold" />
@@ -40,11 +40,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="22dp"
-        android:layout_marginRight="20dp"
-        android:background="#DCDCDC"
+        android:layout_marginBottom="14dp"
+        android:layout_marginRight="17dp"
+        android:background="@android:color/transparent"
         android:contentDescription="@string/siguiente"
         android:onClick="pulsaBoton"
-        android:src="@drawable/play" />
+        android:src="@drawable/play4" />
 
 </RelativeLayout>
