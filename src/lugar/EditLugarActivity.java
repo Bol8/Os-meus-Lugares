@@ -1,9 +1,9 @@
 package lugar;
 
-
 import basedatos.TablaLugar;
 import categoria.CategoriaAdapter;
 import categoria.EditCategoriaActivity;
+import categoria.ListCategoriasActivity;
 
 import com.example.osmeuslugares.R;
 import com.example.osmeuslugares.R.id;
@@ -15,11 +15,18 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnLongClickListener;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
+import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,9 +43,12 @@ public class EditLugarActivity extends Activity {
 	private EditText editTelefono;
 	private EditText editUrl;
 	private EditText editComentario;
+	private ImageButton img;
 	private Lugar editLugar;
 	private CategoriaAdapter adaptador;
-	//private ImageButton btnImg;
+	private int pos;
+
+	// private ImageButton btnImg;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +58,19 @@ public class EditLugarActivity extends Activity {
 		referenciarEditText();
 		cargarCategoriaAdapter();
 		añadir = mostrarDatos();
-		//btnImg = (ImageButton) findViewById(R.id.imageButton1);
-		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+		getWindow().setSoftInputMode(
+				WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
+	}
+
+	@Override
+	protected void onStart() {
+		cargarCategoriaAdapter();
+		super.onStart();
+	}
+
+	public void pulsaBoton(View v) {
+		lanzarListCategoria();
 	}
 
 	/**
@@ -73,7 +93,6 @@ public class EditLugarActivity extends Activity {
 			return false;
 		}
 	}
-
 
 	/**
 	 * -Método que llama al método "editarLugar" de la clase "TablaLugar".
@@ -149,9 +168,10 @@ public class EditLugarActivity extends Activity {
 	 */
 	private void cargarCategoriaAdapter() {
 
-		spinnerTipo = (Spinner) findViewById(R.id.spinnerCategoria);
 		adaptador = new CategoriaAdapter(this);
+		spinnerTipo = (Spinner) findViewById(R.id.spinnerCategoria);
 		spinnerTipo.setAdapter(adaptador);
+
 	}
 
 	/**
@@ -188,6 +208,7 @@ public class EditLugarActivity extends Activity {
 		editTelefono = (EditText) findViewById(R.id.editTextTel);
 		editUrl = (EditText) findViewById(R.id.editTextURL);
 		editComentario = (EditText) findViewById(R.id.editTexTComentario);
+		img = (ImageButton) findViewById(R.id.imageButton1);
 
 	}
 
@@ -202,6 +223,7 @@ public class EditLugarActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 
 		switch (item.getItemId()) {
+
 		case R.id.guardarLugar:
 			if (añadir) {
 				guardarDatosEnTabla();
@@ -210,22 +232,26 @@ public class EditLugarActivity extends Activity {
 			}
 			break;
 
+		case R.id.addCategoria:
+			System.out.println("Lanzar Categoria edit");
+			lanzarEditCategoria();
+			break;
+
 		default:
 			break;
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	
-	public void pulsaImageView(View v) {
-		lanzarEditCategoria();
-	}
-	
+
 	private void lanzarEditCategoria() {
-		Intent i = new Intent(this,EditCategoriaActivity.class);
+		Intent i = new Intent(this, EditCategoriaActivity.class);
 		startActivity(i);
-		
+
+	}
+
+	private void lanzarListCategoria() {
+		Intent i = new Intent(this, ListCategoriasActivity.class);
+		startActivity(i);
 	}
 
 }
-
-

@@ -37,7 +37,6 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		System.out.println("On Create");
 
 		// TEST Crear BBDD
 		try {
@@ -68,7 +67,6 @@ public class MainActivity extends Activity {
 
 	@Override
 	protected void onStart() {
-		System.out.println("On Start");
 		if(musica == null) {
 			this.musica = MediaPlayer.create(this, R.raw.musica_fondo);	
 		}
@@ -76,28 +74,12 @@ public class MainActivity extends Activity {
 		super.onStart();
 	}
 
-	//
-	// @Override
-	// protected void onRestart() {
-	// System.out.println("On ReStart");
-	// leerPreferenciaMusica();
-	// super.onRestart();
-	// }
-	//
+	
 	@Override
 	protected void onDestroy() {
-		System.out.println("On Destroy");
 		musica.stop();
 		super.onDestroy();
 	}
-
-	
-//	 @Override
-//	 protected void onResume() {
-//	 System.out.println("On Resume");
-//	 leerPreferenciaMusica();
-//	 super.onResume();
-//	 }
 
 	public void pulsaBoton(View v) {
 		lanzarListadoLugares();

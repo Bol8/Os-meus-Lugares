@@ -12,5 +12,11 @@
         android:icon="@android:drawable/ic_menu_save"
         android:showAsAction="always"
         android:title="Guardar lugar/Editar lugar"/>
+    <item
+        android:id="@+id/addCategoria"
+        android:showAsAction="always"
+        android:title="Nueva Categoria"
+        android:icon="@android:drawable/ic_input_add">
+    </item>
 
 </menu>

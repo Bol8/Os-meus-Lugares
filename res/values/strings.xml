@@ -35,5 +35,10 @@
     <string name="title_activity_edit_categoria">EditCategoriaActivity</string>
     <string name="NombreCategoria">Nombre:</string>
     <string name="hintNombre">NOMBRE CATEGORÍA</string>
+    <string name="title_activity_list_categorias">ListCategoriasActivity</string>
+    <string name="title_activity_list_categoria">ListCategoriaActivity</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
 
 </resources>

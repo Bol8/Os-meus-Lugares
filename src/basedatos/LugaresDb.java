@@ -36,7 +36,7 @@ public class LugaresDb extends SQLiteOpenHelper {
 	public LugaresDb(Context context) {
 		super(context, nombre, factory, version);
 	}
-
+	
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		this.db = db;
@@ -178,6 +178,9 @@ public class LugaresDb extends SQLiteOpenHelper {
 			SQLiteDatabase db = this.getReadableDatabase();
 			Cursor cursor = db.rawQuery(
 					"SELECT * FROM Categoria ORDER By cat_id", null);
+			
+			listaCategorias.add(new Categoria(0, "Seleccionar...", "icono_nd"));
+			
 			while (cursor.moveToNext()) {
 				categoria = new Categoria();
 				categoria.setId(cursor.getInt(cursor
@@ -194,21 +197,6 @@ public class LugaresDb extends SQLiteOpenHelper {
 
 		}
 		return listaCategorias;
-	}
-
-	public ArrayList<String> obtenerNombresCategorias() {
-		ArrayList<String> listaNombreCategoria = new ArrayList<String>();
-		
-		SQLiteDatabase db = this.getReadableDatabase();
-		Cursor cursor = db.rawQuery(
-				"SELECT cat_nombre FROM Categoria ORDER By cat_id", null);
-
-		while (cursor.moveToNext()) {
-			listaNombreCategoria.add(cursor.getString(cursor
-					.getColumnIndex(Categoria.C_NOMBRE)));
-		}
-
-		return listaNombreCategoria;
 	}
 
 	public TypedArray cargarIconos(Activity activity) {

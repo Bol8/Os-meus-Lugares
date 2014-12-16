@@ -3,7 +3,7 @@
     android:id="@+id/ScrollView1"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:background="@drawable/images2"
+    android:background="@drawable/fondorojo"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -12,7 +12,7 @@
 
     <RelativeLayout
         android:layout_width="294dp"
-        android:layout_height="482dp" >
+        android:layout_height="wrap_content" >
 
         <EditText
             android:id="@+id/editNombre"
@@ -79,17 +79,8 @@
             android:textSize="20dp"
             android:textStyle="bold|italic" />
 
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:onClick="pulsaImageView"
-            android:src="@drawable/iconnuevo" />
-
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/textViewNombreCategoria"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -105,7 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
-            android:layout_below="@+id/textView1"
+            android:layout_below="@+id/textViewNombreCategoria"
             android:layout_marginTop="51dp"
             android:ems="10"
             android:gravity="center"
@@ -119,11 +110,21 @@
             android:id="@+id/spinnerCategoria"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textViewNombreCategoria"
             android:layout_below="@+id/editTexTComentario"
             android:layout_marginTop="14dp"
-            android:layout_toRightOf="@+id/textView1"
             android:gravity="center"
-            android:popupBackground="#50676767" />
+            android:popupBackground="#000000" />
+
+        <ImageButton
+            android:id="@+id/imageButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/spinnerCategoria"
+            android:background="@null"
+            android:onClick="pulsaBoton"
+            android:src="@drawable/ic_content_add_circle" />
 
     </RelativeLayout>
 
